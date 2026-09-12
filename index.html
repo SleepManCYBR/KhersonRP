@@ -2463,7 +2463,7 @@ function pickLang(l){
   g.classList.add('hide');
   setTimeout(()=>{
     g.style.display='none';
-    g.classList.remove('anim'); /* .anim снят → ВСЕ анимации в #gate останавливаются по CSS-селекторам */
+    g.classList.remove('anim');
   },520);
 }
 function reopenGate(){
@@ -2599,7 +2599,7 @@ addEventListener('resize',()=>{
   _resizeTimer=setTimeout(()=>positionPill(true),100);
 });
 
-/* Кастомный скроллбар модалки */
+
 (function(){
   const slider=document.getElementById('mSlider');
   const thumb=document.getElementById('mThumb');
@@ -2655,27 +2655,11 @@ addEventListener('resize',()=>{
   });
 })();
 
-/* CANVAS ПОЛНОСТЬЮ УБРАН.
-   Раньше он рисовал 26 частиц с радиальным градиентом каждый кадр — это
-   была основная причина перегрева Chrome. Фон теперь чисто CSS — body::after
-   с 8 статичными точками-радиалами выглядит почти как живые частицы,
-   но не нагружает ни CPU, ни GPU.
-*/
-
-/* ===== MAP IMAGE ZOOM VIEWER =====
-   Изображение показывается в НАТИВНОМ пиксельном разрешении (без max-width/
-   max-height), а вписывание в экран и весь зум/пан считаются в JS через
-   translate+scale. Раньше картинка сначала растрировалась уменьшенной
-   (max-width:92vw), а потом transform:scale просто увеличивал уже смазанный
-   растр — отсюда была нечёткость. Теперь при зуме видно реальные пиксели
-   картинки, чётко, пока не упрёшься в её собственное разрешение (как в фотошопе).
-   Колесо мыши / щипок двумя пальцами — зум к точке курсора/пальцев,
-   зажать и тянуть — перемещение, двойной клик/тап — сброс или приближение. */
 (function(){
   const overlay=document.getElementById('imgZoom');
   const img=document.getElementById('zoomImg');
   const hint=document.getElementById('zoomHint');
-  const PAD=0.94; // доля вьюпорта, в которую вписываем картинку при открытии
+  const PAD=0.94;
   let fitScale=1,scale=1,posX=0,posY=0;
   let dragging=false,startX=0,startY=0,startPosX=0,startPosY=0;
   let pinchDist=0,pinchScale=1;
