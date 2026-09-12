@@ -17,8 +17,6 @@
 html,body{scrollbar-width:none;-ms-overflow-style:none}
 body{min-height:100%;background:var(--bg);color:var(--ink);font-family:'Manrope',sans-serif;overflow-x:hidden;position:relative}
 
-/* фон + статичные «частицы» через radial-gradient — заменяет canvas полностью.
-   На GPU, не рисуется каждый кадр, выглядит почти как живые частицы. */
 body::before{
   content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
   background:
@@ -42,13 +40,13 @@ body::after{
   will-change:auto;
 }
 
-/* canvas больше не виден, но оставлен на случай совместимости — JS его выключает */
+
 #fx{display:none}
 
 .flag-ru{background:linear-gradient(rgba(8,7,11,.78),rgba(18,15,26,.86)),linear-gradient(to bottom,#fff 0 33.33%,#0039a6 33.33% 66.66%,#d52b1e 66.66% 100%);transition:background .35s ease}
 .flag-uk{background:linear-gradient(rgba(8,7,11,.78),rgba(18,15,26,.86)),linear-gradient(to bottom,#0057b7 0 50%,#ffd700 50% 100%);transition:background .35s ease}
 
-/* ===== keyframes ===== */
+
 @keyframes rotate{to{transform:rotate(360deg)}}
 @keyframes rotateRev{to{transform:rotate(-360deg)}}
 @keyframes cardIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -60,9 +58,7 @@ body::after{
 @keyframes btnRise{0%{opacity:0;transform:translateY(60px) scale(.92)}60%{opacity:1}100%{opacity:1;transform:translateY(0) scale(1)}}
 @keyframes itemReveal{0%{opacity:0;transform:translateY(30px) scale(.96)}100%{opacity:1;transform:none}}
 
-/* ===== GATE / INTRO =====
-   гейт показывается ~1 раз и закрывается — анимации тут OK, но
-   когда он скрыт, ВСЁ должно остановиться. */
+
 #gate{
   position:fixed;inset:0;z-index:2000;overflow:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:24px;
@@ -81,7 +77,7 @@ body::after{
 .rise-dot{
   position:absolute;bottom:-12px;width:6px;height:6px;border-radius:50%;
   background:var(--violet-soft);box-shadow:0 0 8px 2px var(--violet-glow);opacity:0;
-  /* частицы крутятся ТОЛЬКО когда у #gate есть .anim — JS управляет */
+ 
 }
 #gate.anim .rise-dot{animation:riseUp var(--d) linear var(--delay) infinite}
 @keyframes riseUp{0%{opacity:0;transform:translate(0,0) scale(.4)}12%{opacity:1}82%{opacity:.85}100%{opacity:0;transform:translate(var(--dx),var(--rise)) scale(1)}}
@@ -104,7 +100,7 @@ body::after{
 .gate-prompt{position:relative;z-index:3;opacity:0;color:var(--ink-dim);letter-spacing:5px;font-weight:700;text-transform:uppercase;font-size:.84rem;text-align:center;margin-top:6px}
 .gate-grid{position:relative;z-index:3;display:flex;gap:22px;flex-wrap:wrap;justify-content:center}
 
-/* INTRO TIMELINE — анимации только при наличии .anim, без .anim всё статично */
+
 #gate.anim .gate-glow-bottom{animation:glowIn 1.4s ease .1s both}
 #gate.anim .gate-core{animation:coreIn 1.2s cubic-bezier(.2,.7,.3,1) .35s both}
 #gate.anim .core-ring{animation:rotate 4.5s linear infinite, ringIn 1.2s ease .8s both;will-change:transform}
@@ -114,7 +110,7 @@ body::after{
 #gate.anim .lang-btn:nth-child(1){animation-delay:1.55s}
 #gate.anim .lang-btn:nth-child(2){animation-delay:1.7s}
 
-/* ===== КНОПКИ ЯЗЫКА ===== */
+
 .lang-btn{
   position:relative;isolation:isolate;cursor:pointer;overflow:hidden;opacity:0;
   display:flex;align-items:center;gap:16px;width:300px;max-width:86vw;padding:17px 20px;border-radius:20px;
@@ -138,13 +134,6 @@ body::after{
 .lang-btn:hover .lb-arrow{transform:translateX(5px);background:var(--violet);color:#000}
 .lang-btn:active{transform:translateY(-2px) scale(.99)}
 
-/* ===== HEADER ===== */
-/* ===== HEADER =====
-   Блюр возвращён, НО с правильной изоляцией:
-   - contain:layout paint style → Chrome изолирует пересчёт
-   - isolation:isolate → создаётся stacking context, блюр кешируется
-   - transform:translateZ(0) → свой composing-слой на GPU
-   - blur уменьшен до 8px (с 14px) → дешевле на GPU без потери эффекта */
 .topbar{
   position:fixed;top:14px;left:16px;right:16px;z-index:200;display:flex;align-items:center;gap:18px;
   padding:11px 20px;border-radius:20px;animation:dropIn .6s both;
@@ -175,7 +164,7 @@ body::after{
   transform:translateY(-2px);box-shadow:0 0 26px rgba(0,87,183,.5);border-color:#ffd700;
 }
 
-/* ===== CONTROLS ===== */
+
 .controls{position:relative;z-index:50;max-width:1240px;margin:108px auto 0;padding:0 20px}
 .controls-inner{
   display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:14px;border-radius:22px;
@@ -205,17 +194,14 @@ body::after{
 .chip:hover{color:var(--ink);transform:translateY(-2px)}
 .chip.active{color:#000;border-color:transparent}
 
-/* ===== GRID =====
-   Каждая карточка получает свой compositing-слой через translateZ(0).
-   Это решает «низкий fps» при скролле — браузер не перерисовывает их,
-   а просто двигает уже отрендеренные текстуры. */
+
 .rules-grid{max-width:1240px;margin:18px auto 90px;padding:0 20px;display:grid;grid-template-columns:repeat(auto-fill, minmax(320px,1fr));gap:18px;contain:layout style}
 .rule-btn{
   position:relative;overflow:hidden;cursor:pointer;display:flex;align-items:center;gap:18px;padding:20px 24px;min-height:100px;
   border-radius:20px;background:linear-gradient(135deg, rgba(28,20,42,.9), rgba(14,12,20,.92));border:1px solid var(--line);
   box-shadow:0 10px 30px rgba(0,0,0,.5);
   transition:transform .25s cubic-bezier(.2,.8,.2,1), border-color .25s, box-shadow .25s;
-  transform:translateZ(0); /* GPU слой → плавный скролл */
+  transform:translateZ(0);
   contain:layout paint style;
 }
 .rule-btn.anim{animation:cardIn .4s both}
@@ -226,10 +212,6 @@ body::after{
 .rule-btn .ico{font-size:1.7rem;color:var(--violet-soft);width:34px;text-align:center}
 .rule-btn .ttl{flex:1;font-family:'Unbounded',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.4px;line-height:1.3}
 
-/* ===== MODAL =====
-   УБРАНО: вращающаяся conic-gradient рамка (грела GPU).
-   УБРАНО: haloPulse (бесконечный box-shadow animation).
-   ЗАМЕНЕНО на: статичная розовая рамка с большим box-shadow — выглядит почти идентично. */
 .modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.88);justify-content:center;align-items:center;padding:20px;opacity:0;transition:opacity .3s}
 .modal.show{display:flex;opacity:1}
 
@@ -247,7 +229,6 @@ body::after{
 .map-img{width:100%;border-radius:18px;margin-bottom:16px;box-shadow:0 12px 40px rgba(0,0,0,.55);cursor:zoom-in;transition:filter .25s}
 .map-img:hover{filter:brightness(1.06)}
 
-/* ===== MAP LEGEND ===== */
 .map-legend{position:relative;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 10px;padding:20px 22px;margin-bottom:24px;border-radius:18px;background:linear-gradient(135deg, rgba(138,99,255,.12), rgba(14,12,20,.55));border:1px solid var(--line-strong);box-shadow:0 12px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05)}
 .map-legend::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 100% at 0% 0%, rgba(138,99,255,.14), transparent 60%)}
 .legend-title{grid-column:1/-1;display:flex;align-items:center;gap:9px;font-family:'Unbounded',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:1px;text-transform:uppercase;color:var(--violet-soft);margin-bottom:8px;text-shadow:0 0 14px rgba(138,99,255,.35)}
@@ -260,11 +241,6 @@ body::after{
 .legend-swatch i{font-size:.72rem;color:#0b0a10;filter:drop-shadow(0 1px 1px rgba(255,255,255,.3))}
 .legend-text{font-size:.87rem;font-weight:700;color:var(--ink);line-height:1.3}
 
-/* ===== FULLSCREEN MAP ZOOM VIEWER =====
-   Картинка рендерится в НАТИВНОМ пиксельном размере (без max-width/max-height,
-   которые раньше растрировали её уменьшенной, а затем «scale» просто увеличивал
-   уже смазанный растр). Вписывание в экран и весь зум теперь считаются в JS
-   через translate/scale — так при зуме видно реальные пиксели, чётко, как в фотошопе. */
 .img-zoom{display:none;position:fixed;inset:0;z-index:3000;background:rgba(4,3,7,.94);opacity:0;transition:opacity .25s ease;touch-action:none}
 .img-zoom.show{display:block;opacity:1}
 .zoom-stage{position:absolute;inset:0;overflow:hidden}
@@ -288,7 +264,6 @@ body::after{
 .ms-thumb:hover{filter:brightness(1.12)}
 .ms-thumb.drag{cursor:grabbing;box-shadow:0 0 24px var(--violet-glow), inset 0 0 0 1px rgba(255,255,255,.6)}
 
-/* §-CARDS — статичная рамка, никакой анимации */
 .item{
   position:relative;isolation:isolate;overflow:hidden;
   background:rgba(255,255,255,.03);
@@ -334,7 +309,7 @@ footer b{color:var(--violet)}
   .lang-btn{width:280px;padding:15px 18px;backdrop-filter:blur(6px) saturate(115%);-webkit-backdrop-filter:blur(6px) saturate(115%)}
   .topbar{backdrop-filter:blur(5px) saturate(120%);-webkit-backdrop-filter:blur(5px) saturate(120%)}
   .lb-name{font-size:1.1rem}
-  body::after{opacity:.35} /* меньше «частиц» на мобиле */
+  body::after{opacity:.35} 
 }
 
 @media (prefers-reduced-motion:reduce){
