@@ -69,7 +69,7 @@
 
 <div class="img-zoom" id="imgZoom">
   <span class="zoom-close" id="zoomClose">×</span>
-  <div class="zoom-stage" id="zoomStage"><img id="zoomImg" src="" alt="" draggable="false"></div>
+  <div class="zoom-stage" id="zoomStage"><div class="zoom-loading" id="zoomLoading"><div class="map-loading-icon"></div></div><img id="zoomImg" src="" alt="" draggable="false"></div>
   <div class="zoom-hint" id="zoomHint"></div>
 </div>
 
@@ -2526,7 +2526,7 @@ function renderModalTab(){
       +'<button class="mtab'+(modalTab===1?' active':'')+'" data-tab="1"><i class="fa-solid '+rule.altTab.icon+'"></i>'+(rule.altTab.tt[lang]||rule.altTab.tt.uk)+'</button>'
       +'</div>';
   }
-  if(src.image)h+='<img class="map-img" src="'+src.image+'" loading="lazy" decoding="async" alt="" onclick="openMapZoom(this.src)">';
+  if(src.image)h+='<div class="map-img-wrap"><div class="map-loading"><div class="map-loading-icon"></div></div><img class="map-img" src="'+src.image+'" loading="lazy" decoding="async" alt="" onload="this.classList.add(\'loaded\');this.previousElementSibling.classList.add(\'hide\')" onclick="openMapZoom(this.src)"></div>';
   if(src.legend){
     h+='<div class="map-legend"><div class="legend-title"><i class="fa-solid fa-map"></i>'+(t.legendTitle||'')+'</div>';
     src.legend.forEach(l=>{
@@ -2544,6 +2544,12 @@ function renderModalTab(){
   });
   const body=document.getElementById('modalBody');
   body.innerHTML=h;
+  body.querySelectorAll('.map-img').forEach(mi=>{
+    if(mi.complete && mi.naturalWidth){
+      mi.classList.add('loaded');
+      if(mi.previousElementSibling&&mi.previousElementSibling.classList.contains('map-loading'))mi.previousElementSibling.classList.add('hide');
+    }
+  });
   body.querySelectorAll('.mtab').forEach(btn=>{
     btn.addEventListener('click',()=>{
       const tab=+btn.dataset.tab;
@@ -2659,6 +2665,7 @@ addEventListener('resize',()=>{
   const overlay=document.getElementById('imgZoom');
   const img=document.getElementById('zoomImg');
   const hint=document.getElementById('zoomHint');
+  const zoomLoading=document.getElementById('zoomLoading');
   const PAD=0.94;
   let fitScale=1,scale=1,posX=0,posY=0;
   let dragging=false,startX=0,startY=0,startPosX=0,startPosY=0;
@@ -2686,6 +2693,7 @@ addEventListener('resize',()=>{
 
   window.openMapZoom=function(src){
     img.classList.remove('ready');
+    zoomLoading.classList.remove('hide');
     img.src=src;
     const onReady=()=>{
       const nw=img.naturalWidth||1, nh=img.naturalHeight||1;
@@ -2694,6 +2702,7 @@ addEventListener('resize',()=>{
       centerAt(scale);
       apply();
       img.classList.add('ready');
+      zoomLoading.classList.add('hide');
     };
     if(img.complete && img.naturalWidth) onReady();
     else img.onload=onReady;
