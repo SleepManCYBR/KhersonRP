@@ -245,6 +245,7 @@ body::after{
 .img-zoom.show{display:block;opacity:1}
 .zoom-stage{position:absolute;inset:0;overflow:hidden}
 .zoom-stage img{position:absolute;top:0;left:0;max-width:none;max-height:none;border-radius:14px;box-shadow:0 30px 100px rgba(0,0,0,.7);transform-origin:0 0;will-change:transform;cursor:grab;user-select:none;-webkit-user-drag:none;image-rendering:auto;opacity:0;transition:opacity .18s ease}
+.zoom-stage img.pixel-zoom{image-rendering:-webkit-optimize-contrast;image-rendering:pixelated}
 .zoom-stage img.ready{opacity:1}
 .zoom-stage img.dragging{cursor:grabbing;transition:none}
 .img-zoom .zoom-close{position:absolute;top:16px;right:26px;z-index:2;font-size:2.8rem;line-height:1;cursor:pointer;color:#c9c4de;transition:color .25s,transform .25s}
