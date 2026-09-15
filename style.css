@@ -226,8 +226,20 @@ body::after{
 .close{position:absolute;top:14px;right:22px;z-index:6;font-size:3rem;line-height:1;cursor:pointer;color:#6d6580;transition:color .25s, transform .25s}
 .close:hover{color:var(--violet);transform:rotate(90deg)}
 .modal h2{font-family:'Unbounded',sans-serif;font-weight:800;font-size:1.9rem;text-align:center;margin-bottom:28px;padding:0 30px;background:linear-gradient(92deg,#fff,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 50px var(--violet-glow)}
-.map-img{width:100%;border-radius:18px;margin-bottom:16px;box-shadow:0 12px 40px rgba(0,0,0,.55);cursor:zoom-in;transition:filter .25s}
+.map-img-wrap{position:relative;overflow:hidden;border-radius:18px;margin-bottom:16px;min-height:200px;box-shadow:0 12px 40px rgba(0,0,0,.55);background:linear-gradient(135deg, rgba(28,20,42,.9), rgba(14,12,20,.92))}
+.map-img{width:100%;display:block;border-radius:18px;cursor:zoom-in;opacity:0;transition:opacity .4s ease, filter .25s}
+.map-img.loaded{opacity:1}
 .map-img:hover{filter:brightness(1.06)}
+.map-loading{position:absolute;inset:0;z-index:2;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(135deg, rgba(28,20,42,.9), rgba(14,12,20,.92));transition:opacity .35s ease, visibility .35s ease}
+.map-loading::before{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg, rgba(138,99,255,.06) 0px, rgba(138,99,255,.06) 2px, transparent 2px, transparent 28px)}
+.map-loading::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(138,99,255,.16) 35%,rgba(185,163,255,.65) 50%,rgba(138,99,255,.16) 65%,transparent);transform:skewX(-20deg);animation:mapShine 1.4s ease-in-out infinite}
+.map-loading.hide{opacity:0;visibility:hidden;pointer-events:none}
+.map-loading-icon{position:relative;z-index:1;width:42px;height:42px;border-radius:50%;border:3px solid rgba(138,99,255,.22);border-top-color:var(--violet);box-shadow:0 0 18px rgba(138,99,255,.35);animation:mapSpin .85s linear infinite}
+.zoom-loading{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;overflow:hidden;background:rgba(9,7,14,.92);pointer-events:none;transition:opacity .35s ease, visibility .35s ease}
+.zoom-loading::after{content:'';position:absolute;top:0;left:-60%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(138,99,255,.16) 35%,rgba(185,163,255,.65) 50%,rgba(138,99,255,.16) 65%,transparent);transform:skewX(-20deg);animation:mapShine 1.4s ease-in-out infinite}
+.zoom-loading.hide{opacity:0;visibility:hidden}
+@keyframes mapShine{0%{left:-60%}100%{left:130%}}
+@keyframes mapSpin{to{transform:rotate(360deg)}}
 
 .map-legend{position:relative;overflow:hidden;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:6px 10px;padding:20px 22px;margin-bottom:24px;border-radius:18px;background:linear-gradient(135deg, rgba(138,99,255,.12), rgba(14,12,20,.55));border:1px solid var(--line-strong);box-shadow:0 12px 30px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.05)}
 .map-legend::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(120% 100% at 0% 0%, rgba(138,99,255,.14), transparent 60%)}
