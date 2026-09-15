@@ -2664,7 +2664,10 @@ addEventListener('resize',()=>{
   let dragging=false,startX=0,startY=0,startPosX=0,startPosY=0;
   let pinchDist=0,pinchScale=1;
 
-  function apply(){ img.style.transform='translate('+posX+'px,'+posY+'px) scale('+scale+')'; }
+  function apply(){
+    img.style.transform='translate('+posX+'px,'+posY+'px) scale('+scale+')';
+    img.classList.toggle('pixel-zoom', scale > 1);
+  }
   function clampScale(s){ return Math.min(fitScale*10,Math.max(fitScale,s)); }
   function centerAt(fs){
     const w=img.naturalWidth*fs, h=img.naturalHeight*fs;
