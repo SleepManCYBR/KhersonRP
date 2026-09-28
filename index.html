@@ -161,6 +161,48 @@ const rules = [
 "uk": "Штраф 6500€ / бан",
 "en": "6500€ fine / ban"
 }
+},
+{
+"sub": "§1.6",
+"type": "fine",
+"t": {
+"ru": "Мелкое хулиганство — оскорбительное приставание к гражданам, нецензурная брань в общественных местах, а также умышленные действия, нарушающие общественный порядок (поломка мелкого имущества, провокации).",
+"uk": "Дрібне хуліганство — образливе чіпляння до громадян, нецензурна лайка в громадських місцях, а також умисні дії, що порушують громадський порядок (поломка дрібного майна, провокації).",
+"en": "Petty hooliganism — insulting harassment of citizens, obscene language in public places, and deliberate acts that disturb public order (breaking minor property, provocations)."
+},
+"p": {
+"ru": "Штраф 2000€",
+"uk": "Штраф 2000€",
+"en": "2000€ fine"
+}
+},
+{
+"sub": "§1.7",
+"type": "fine",
+"t": {
+"ru": "Хулиганство — грубое нарушение общественного порядка с применением насилия, угрозой его применения или повреждением чужого имущества.",
+"uk": "Хуліганство — грубе порушення громадського порядку із застосуванням насильства, погрозою його застосування або пошкодженням чужого майна.",
+"en": "Hooliganism — gross violation of public order involving violence, the threat of it, or damage to another person's property."
+},
+"p": {
+"ru": "Штраф 5000€",
+"uk": "Штраф 5000€",
+"en": "5000€ fine"
+}
+},
+{
+"sub": "§1.8",
+"type": "severe",
+"t": {
+"ru": "Пропаганда / Гимны — запрещено как-либо пропагандировать свои интересы, касающиеся политики (номера СВО считаются пропагандой), а также категорически запрещено включать гимны любых государств (как существующих, так и исторических / прекративших существование, исключений нет).",
+"uk": "Пропаганда / Гімни — заборонено будь-яким чином пропагувати свої інтереси, що стосуються політики (номери СВО вважаються пропагандою), а також категорично заборонено вмикати гімни будь-яких держав (як існуючих, так і історичних / тих, що припинили існування, винятків немає).",
+"en": "Propaganda / Anthems — promoting political interests in any way is forbidden (SVO numbers count as propaganda), and playing the anthem of any state, existing or historical/defunct, is strictly forbidden — no exceptions."
+},
+"p": {
+"ru": "5 дней",
+"uk": "5 днів",
+"en": "5 days"
+}
 }
 ]
 },
@@ -448,9 +490,9 @@ const rules = [
 "en": "Agricultural vehicles in the city."
 },
 "p": {
-"ru": "Штраф 4000€ или депорт до 1 суток",
-"uk": "Штраф 4000€ або депорт до 1 доби",
-"en": "4000€ fine or deport up to 1 day"
+"ru": "Штраф 4000€ или бан до 1 суток",
+"uk": "Штраф 4000€ або бан до 1 доби",
+"en": "4000€ fine or ban up to 1 day"
 }
 },
 {
@@ -532,9 +574,9 @@ const rules = [
 "en": "Ignoring a stop request from administration (Admin car)."
 },
 "p": {
-"ru": "Депорт 1-3 суток",
-"uk": "Депорт 1-3 доби",
-"en": "Deport 1-3 days"
+"ru": "Бан 1-3 суток",
+"uk": "Бан 1-3 доби",
+"en": "Ban 1-3 days"
 }
 },
 {
@@ -564,6 +606,20 @@ const rules = [
 "uk": "Штраф 5000€ / КПЗ 10 хвилин",
 "en": "5000€ fine / 10 minutes detention (KPZ)"
 }
+},
+{
+"sub": "§2.25",
+"type": "fine",
+"t": {
+"ru": "Громкая музыка в авто — включение громкой музыки в автомобиле возле жилых домов, в людных местах или в ночное время, если это мешает другим игрокам.",
+"uk": "Гучна музика в авто — вмикання гучної музики в автомобілі біля житлових будинків, у людних місцях або в нічний час, якщо це заважає іншим гравцям.",
+"en": "Loud music in a car — playing loud music in a vehicle near residential buildings, in crowded places or at night when it disturbs other players."
+},
+"p": {
+"ru": "Штраф 3000€",
+"uk": "Штраф 3000€",
+"en": "3000€ fine"
+}
 }
 ]
 },
@@ -577,11 +633,53 @@ const rules = [
 },
 "image": "https://files.catbox.moe/rdp96q.png",
 "legend": [
-{"icon":"fa-lock","color":"#3ddc73","tt":{"ru":"Зелёные зоны","uk":"Зелені зони","en":"Green zones"}},
-{"shape":"outline","color":"#3ddc73","fill":"#ff3b3b","tt":{"ru":"Приватная территория (зелёная обводка + красное заполнение)","uk":"Приватна територія (зелена обводка + червоне заповнення)","en":"Private territory (green outline + red fill)"}},
-{"icon":"fa-burst","color":"#3ea6ff","tt":{"ru":"Ивентовые зоны","uk":"Івентові зони","en":"Event zones"}},
-{"icon":"fa-house","color":"#ff9a3d","tt":{"ru":"Руф-кемп зоны","uk":"Руф-кемп зони","en":"Roof camp zones"}},
-{"icon":"fa-satellite-dish","color":"#8a2f3a","shape":"circle","tt":{"ru":"Зоны, где разрешены радары","uk":"Зони, де дозволені радари","en":"Zones where radars are allowed"}}
+{
+"icon": "fa-lock",
+"color": "#3ddc73",
+"tt": {
+"ru": "Зелёные зоны",
+"uk": "Зелені зони",
+"en": "Green zones"
+}
+},
+{
+"shape": "outline",
+"color": "#3ddc73",
+"fill": "#ff3b3b",
+"tt": {
+"ru": "Приватная территория (зелёная обводка + красное заполнение)",
+"uk": "Приватна територія (зелена обводка + червоне заповнення)",
+"en": "Private territory (green outline + red fill)"
+}
+},
+{
+"icon": "fa-burst",
+"color": "#3ea6ff",
+"tt": {
+"ru": "Ивентовые зоны",
+"uk": "Івентові зони",
+"en": "Event zones"
+}
+},
+{
+"icon": "fa-house",
+"color": "#ff9a3d",
+"tt": {
+"ru": "Руф-кемп зоны",
+"uk": "Руф-кемп зони",
+"en": "Roof camp zones"
+}
+},
+{
+"icon": "fa-satellite-dish",
+"color": "#8a2f3a",
+"shape": "circle",
+"tt": {
+"ru": "Зоны, где разрешены радары",
+"uk": "Зони, де дозволені радари",
+"en": "Zones where radars are allowed"
+}
+}
 ],
 "items": [
 {
@@ -657,83 +755,12 @@ const rules = [
 ]
 },
 {
-"num": 4,
-"icon": "fa-road-barrier",
-"tt": {
-"ru": "КПП и блокпосты",
-"uk": "КПП та блокпости",
-"en": "Checkpoints"
-},
-"image": "https://files.catbox.moe/ua9pta.png",
-"legend": [
-{"icon":"fa-shield-halved","color":"#ff3b3b","tt":{"ru":"КПП / блокпост","uk":"КПП / блокпост","en":"Checkpoint / blockpost"}}
-],
-"items": [
-{
-"sub": "§4.1",
-"type": "fine",
-"t": {
-"ru": "Игнорирование требования остановки на КПП.",
-"uk": "Ігнорування вимоги зупинки на КПП.",
-"en": "Ignoring a stop order at a checkpoint."
-},
-"p": {
-"ru": "Штраф 5500€",
-"uk": "Штраф 5500€",
-"en": "5500€ fine"
-}
-},
-{
-"sub": "§4.2",
-"type": "fine",
-"t": {
-"ru": "Использование оружия на КПП.",
-"uk": "Використання зброї на КПП.",
-"en": "Using a weapon at a checkpoint."
-},
-"p": {
-"ru": "Штраф 8000€",
-"uk": "Штраф 8000€",
-"en": "8000€ fine"
-}
-},
-{
-"sub": "§4.3",
-"type": "fine",
-"t": {
-"ru": "Отказ от проверки документов.",
-"uk": "Відмова від перевірки документів.",
-"en": "Refusing a document check."
-},
-"p": {
-"ru": "Штраф 4000€",
-"uk": "Штраф 4000€",
-"en": "4000€ fine"
-}
-},
-{
-"sub": "§4.4",
-"type": "fine",
-"t": {
-"ru": "Проверка транспорта без RP-причины (со стороны полиции).",
-"uk": "Перевірка транспорту без RP-причини (з боку поліції).",
-"en": "Vehicle search without an RP reason (by police)."
-},
-"p": {
-"ru": "Штраф 6000€",
-"uk": "Штраф 6000€",
-"en": "6000€ fine"
-}
-}
-]
-},
-{
 "num": 5,
 "icon": "fa-gun",
 "tt": {
-"ru": "Оружие и лицензия",
-"uk": "Зброя та ліцензія",
-"en": "Weapons and license"
+"ru": "Запрещённые вещи, вооружение и нападения",
+"uk": "Заборонені речі, озброєння та напади",
+"en": "Prohibited items, weapons and attacks"
 },
 "items": [
 {
@@ -768,28 +795,14 @@ const rules = [
 "sub": "§5.3",
 "type": "fine",
 "t": {
-"ru": "Использование оружия в людном месте без оснований.",
-"uk": "Використання зброї у людному місці без підстав.",
-"en": "Using a weapon in a crowded place without cause."
+"ru": "Использование оружия в людном месте.",
+"uk": "Використання зброї у людному місці.",
+"en": "Using a weapon in a crowded place."
 },
 "p": {
 "ru": "Штраф 7000€ / 15 минут КПЗ",
 "uk": "Штраф 7000€ / 15 хвилин КПЗ",
 "en": "7000€ fine / 15 minutes detention (KPZ)"
-}
-},
-{
-"sub": "§5.4",
-"type": "fine",
-"t": {
-"ru": "Передача оружия третьим лицам.",
-"uk": "Передача зброї третім особам.",
-"en": "Transferring a weapon to a third party."
-},
-"p": {
-"ru": "Штраф 5000€ / КПЗ 10 минут",
-"uk": "Штраф 5000€ / КПЗ 10 хвилин",
-"en": "5000€ fine / 10 minutes detention (KPZ)"
 }
 },
 {
@@ -818,6 +831,160 @@ const rules = [
 "ru": "КПЗ 25 минут",
 "uk": "КПЗ 25 хвилин",
 "en": "25 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§5.7",
+"type": "fine",
+"t": {
+"ru": "Хранение нелегального холодного оружия — хранение и ношение запрещённого оружия ближнего боя (кастеты, m9 bayonet, mathete, железная бита).",
+"uk": "Зберігання нелегальної холодної зброї — зберігання та носіння забороненої зброї ближнього бою (кастети, m9 bayonet, mathete, залізна бита).",
+"en": "Storing illegal melee weapons — storing and carrying prohibited melee weapons (brass knuckles, m9 bayonet, mathete, iron bat)."
+},
+"p": {
+"ru": "Штраф 3000€ + изъятие",
+"uk": "Штраф 3000€ + вилучення",
+"en": "3000€ fine + confiscation"
+}
+},
+{
+"sub": "§5.8",
+"type": "fine",
+"t": {
+"ru": "Хранение нелегального огнестрельного оружия — хранение любого огнестрельного оружия без действующей лицензии.",
+"uk": "Зберігання нелегальної вогнепальної зброї — зберігання будь-якої вогнепальної зброї без чинної ліцензії.",
+"en": "Storing illegal firearms — storing any firearm without a valid license."
+},
+"p": {
+"ru": "Штраф 5000€ + изъятие",
+"uk": "Штраф 5000€ + вилучення",
+"en": "5000€ fine + confiscation"
+}
+},
+{
+"sub": "§5.9",
+"type": "severe",
+"t": {
+"ru": "Хранение наркотических веществ — наличие при себе или в транспорте любых запрещённых наркотических средств.",
+"uk": "Зберігання наркотичних речовин — наявність при собі або в транспорті будь-яких заборонених наркотичних засобів.",
+"en": "Storing narcotics — carrying any prohibited narcotic substances on you or in a vehicle."
+},
+"p": {
+"ru": "КПЗ 15 минут + изъятие",
+"uk": "КПЗ 15 хвилин + вилучення",
+"en": "15 minutes detention (KPZ) + confiscation"
+}
+},
+{
+"sub": "§5.10",
+"type": "fine",
+"t": {
+"ru": "Хранение украденных и краденых вещей — наличие при себе или сбыт предметов, полученных в результате кражи, ограбления или взлома.",
+"uk": "Зберігання вкрадених речей — наявність при собі або збут предметів, отриманих внаслідок крадіжки, пограбування чи зламу.",
+"en": "Storing stolen goods — carrying or selling items obtained through theft, robbery or breaking in."
+},
+"p": {
+"ru": "Штраф 3000€ + изъятие вещей",
+"uk": "Штраф 3000€ + вилучення речей",
+"en": "3000€ fine + confiscation of items"
+}
+},
+{
+"sub": "§5.11",
+"type": "severe",
+"t": {
+"ru": "Сбыт или продажа наркотиков — продажа, передача или покупка наркотических веществ у третьих лиц.",
+"uk": "Збут або продаж наркотиків — продаж, передача або купівля наркотичних речовин у третіх осіб.",
+"en": "Drug dealing — selling, handing over or buying narcotic substances from third parties."
+},
+"p": {
+"ru": "КПЗ 15 минут + изъятие",
+"uk": "КПЗ 15 хвилин + вилучення",
+"en": "15 minutes detention (KPZ) + confiscation"
+}
+},
+{
+"sub": "§5.12",
+"type": "severe",
+"t": {
+"ru": "Сбыт или продажа оружия — продажа, покупка или попытка торговли любым нелегальным оружием.",
+"uk": "Збут або продаж зброї — продаж, купівля або спроба торгівлі будь-якою нелегальною зброєю.",
+"en": "Arms dealing — selling, buying or attempting to trade any illegal weapon."
+},
+"p": {
+"ru": "КПЗ 20 минут + изъятие",
+"uk": "КПЗ 20 хвилин + вилучення",
+"en": "20 minutes detention (KPZ) + confiscation"
+}
+},
+{
+"sub": "§5.13",
+"type": "severe",
+"t": {
+"ru": "Убийство человека — умышленное лишение жизни другого гражданина или гос. служащего.",
+"uk": "Вбивство людини — умисне позбавлення життя іншого громадянина або держслужбовця.",
+"en": "Murder — intentionally killing another citizen or a government employee."
+},
+"p": {
+"ru": "КПЗ 25 минут",
+"uk": "КПЗ 25 хвилин",
+"en": "25 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§5.14",
+"type": "severe",
+"t": {
+"ru": "Вооружённый разбой — нападение с целью хищения чужого имущества (денег, вещей), совершённое с применением оружия или предметов, используемых в качестве оружия.",
+"uk": "Збройний розбій — напад з метою викрадення чужого майна (грошей, речей), вчинений із застосуванням зброї або предметів, що використовуються як зброя.",
+"en": "Armed robbery — an attack aimed at stealing another's property (money, items) committed with a weapon or objects used as a weapon."
+},
+"p": {
+"ru": "КПЗ 15 минут",
+"uk": "КПЗ 15 хвилин",
+"en": "15 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§5.15",
+"type": "fine",
+"t": {
+"ru": "Причинение лёгких телесных повреждений — нанесение побоев или лёгких травм (драка на кулаках, синяки, ссадины), не создающих угрозы для жизни.",
+"uk": "Завдання легких тілесних ушкоджень — завдання побоїв або легких травм (бійка на кулаках, синці, садна), що не створюють загрози для життя.",
+"en": "Causing minor bodily harm — beatings or light injuries (fist fights, bruises, scrapes) that are not life-threatening."
+},
+"p": {
+"ru": "Штраф 3000€",
+"uk": "Штраф 3000€",
+"en": "3000€ fine"
+}
+},
+{
+"sub": "§5.16",
+"type": "severe",
+"t": {
+"ru": "Причинение телесных повреждений средней тяжести — нанесение травм средней тяжести без применения огнестрельного оружия (удары битой, переломы, длительное лечение).",
+"uk": "Завдання тілесних ушкоджень середньої тяжкості — завдання травм середньої тяжкості без застосування вогнепальної зброї (удари битою, переломи, тривале лікування).",
+"en": "Causing moderate bodily harm — moderate injuries without firearms (bat strikes, fractures, long treatment)."
+},
+"p": {
+"ru": "КПЗ 10 минут",
+"uk": "КПЗ 10 хвилин",
+"en": "10 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§5.17",
+"type": "severe",
+"t": {
+"ru": "Причинение тяжких телесных повреждений — нанесение опасных для жизни травм или увечий с применением оружия или предметов, используемых в качестве оружия.",
+"uk": "Завдання тяжких тілесних ушкоджень — завдання небезпечних для життя травм або каліцтв із застосуванням зброї або предметів, що використовуються як зброя.",
+"en": "Causing grievous bodily harm — life-threatening injuries or mutilation inflicted with a weapon or objects used as a weapon."
+},
+"p": {
+"ru": "КПЗ 15 минут",
+"uk": "КПЗ 15 хвилин",
+"en": "15 minutes detention (KPZ)"
 }
 }
 ]
@@ -952,9 +1119,9 @@ const rules = [
 "en": "MetaGaming."
 },
 "p": {
-"ru": "Штраф 7500€ или депорт 1 день",
-"uk": "Штраф 7500€ або депорт 1 день",
-"en": "7500€ fine or deport 1 day"
+"ru": "Штраф 7500€ или бан 1 день",
+"uk": "Штраф 7500€ або бан 1 день",
+"en": "7500€ fine or ban 1 day"
 }
 },
 {
@@ -996,6 +1163,48 @@ const rules = [
 "p": {
 "ru": "бан 2 дня",
 "uk": "бан 2 дня",
+"en": "ban 2 days"
+}
+},
+{
+"sub": "§6.13",
+"type": "severe",
+"t": {
+"ru": "NRP Inventory — использование игрового инвентаря в обход логики реальной жизни (например, нескольких автоматов, пиротехники; исключение: печеньки, какао, яблоки, энергетики).",
+"uk": "NRP Inventory — використання ігрового інвентарю в обхід логіки реального життя (наприклад, кількох автоматів, піротехніки; виняток: печиво, какао, яблука, енергетики).",
+"en": "NRP Inventory — using the game inventory in a way that bypasses real-life logic (e.g. several assault rifles, pyrotechnics; exceptions: cookies, cocoa, apples, energy drinks)."
+},
+"p": {
+"ru": "бан 1-3 дня",
+"uk": "бан 1-3 дні",
+"en": "ban 1-3 days"
+}
+},
+{
+"sub": "§6.14",
+"type": "severe",
+"t": {
+"ru": "DelayRP — намеренное затягивание RP-процесса без IC-причины (лимит на суд / досудебное — до 1 часа, на остальные RP-ситуации — до 20 минут).",
+"uk": "DelayRP — навмисне затягування RP-процесу без IC-причини (ліміт на суд / досудове — до 1 години, на решту RP-ситуацій — до 20 хвилин).",
+"en": "DelayRP — deliberately dragging out an RP process without an IC reason (limit for court / pre-trial — up to 1 hour, for all other RP situations — up to 20 minutes)."
+},
+"p": {
+"ru": "бан 1-2 дня",
+"uk": "бан 1-2 дні",
+"en": "ban 1-2 days"
+}
+},
+{
+"sub": "§6.15",
+"type": "severe",
+"t": {
+"ru": "NonRP Behavior — обесценивание ценных вещей, например обесценивание автомобиля, то есть таран знаков, ломая свой автомобиль.",
+"uk": "NonRP Behavior — знецінення цінних речей, наприклад знецінення автомобіля, тобто таран знаків із ламанням власного автомобіля.",
+"en": "NonRP Behavior — devaluing valuable items, e.g. devaluing a car by ramming signs and wrecking your own vehicle."
+},
+"p": {
+"ru": "бан 2 дня",
+"uk": "бан 2 дні",
 "en": "ban 2 days"
 }
 },
@@ -1219,6 +1428,20 @@ const rules = [
 "uk": "Перм",
 "en": "Permanent ban"
 }
+},
+{
+"sub": "§7.4",
+"type": "severe",
+"t": {
+"ru": "Спец. службы и их формы — запрещено носить формы с какими-либо флагами / символами / позначками / гербами (исключение: украинский флаг, символы, позначки).",
+"uk": "Спецслужби та їхні форми — заборонено носити форми з будь-якими прапорами / символами / позначками / гербами (виняток: український прапор, символи, позначки).",
+"en": "Special services and their uniforms — wearing uniforms with any flags / symbols / insignia / coats of arms is forbidden (exception: the Ukrainian flag, symbols, insignia)."
+},
+"p": {
+"ru": "—",
+"uk": "—",
+"en": "—"
+}
 }
 ]
 },
@@ -1328,6 +1551,34 @@ const rules = [
 "uk": "Зняття з посади",
 "en": "Removal from position"
 }
+},
+{
+"sub": "§8.9",
+"type": "severe",
+"t": {
+"ru": "Превышение должностных полномочий.",
+"uk": "Перевищення посадових повноважень.",
+"en": "Abuse of official authority."
+},
+"p": {
+"ru": "КПЗ 35 минут / снятие с должности",
+"uk": "КПЗ 35 хвилин / зняття з посади",
+"en": "35 minutes detention (KPZ) / removal from position"
+}
+},
+{
+"sub": "§8.10",
+"type": "fine",
+"t": {
+"ru": "Неподчинение законному требованию от гос. сотрудника.",
+"uk": "Непокора законній вимозі держслужбовця.",
+"en": "Disobeying a lawful demand of a government employee."
+},
+"p": {
+"ru": "Штраф 4000€ / КПЗ 10 минут",
+"uk": "Штраф 4000€ / КПЗ 10 хвилин",
+"en": "4000€ fine / 10 minutes detention (KPZ)"
+}
 }
 ]
 },
@@ -1433,9 +1684,9 @@ const rules = [
 "en": "Ignoring a court ruling."
 },
 "p": {
-"ru": "Депорт 1 день",
-"uk": "Депорт 1 день",
-"en": "Deport 1 day"
+"ru": "Бан 1 день",
+"uk": "Бан 1 день",
+"en": "Ban 1 day"
 }
 },
 {
@@ -1447,9 +1698,9 @@ const rules = [
 "en": "Ignoring an RP warning from court security."
 },
 "p": {
-"ru": "Депорт 1 день",
-"uk": "Депорт 1 день",
-"en": "Deport 1 day"
+"ru": "Бан 1 день",
+"uk": "Бан 1 день",
+"en": "Ban 1 day"
 }
 },
 {
@@ -1461,18 +1712,18 @@ const rules = [
 "en": "Cuffing without an RP reason."
 },
 "p": {
-"ru": "Депорт 1 день",
-"uk": "Депорт 1 день",
-"en": "Deport 1 day"
+"ru": "Бан 1 день",
+"uk": "Бан 1 день",
+"en": "Ban 1 day"
 }
 },
 {
 "sub": "§9.11",
 "type": "severe",
 "t": {
-"ru": "Находиться на территории зала суда могут только адвокаты, судьи, офицеры, задержанные и свидетели.",
-"uk": "Знаходитися на території залу суду можуть тільки адвокати, судді, офіцери, затримані та свідки.",
-"en": "Only lawyers, judges, officers, detainees, and witnesses may be present in the courtroom."
+"ru": "Находиться на территории зала суда могут только адвокаты, прокуроры, судьи, офицеры, задержанные и свидетели.",
+"uk": "Знаходитися на території залу суду можуть тільки адвокати, прокурори, судді, офіцери, затримані та свідки.",
+"en": "Only lawyers, prosecutors, judges, officers, detainees, and witnesses may be present in the courtroom."
 },
 "p": {
 "ru": "КПЗ 10 минут",
@@ -1492,6 +1743,90 @@ const rules = [
 "ru": "КПЗ 10 минут",
 "uk": "КПЗ 10 хвилин",
 "en": "10 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§9.13",
+"type": "fine",
+"t": {
+"ru": "Помеха судебному процессу — попытки сорвать заседание, шумы, несанкционированное перемещение по залу суда или выкрики без разрешения судьи.",
+"uk": "Перешкоджання судовому процесу — спроби зірвати засідання, шуми, несанкціоноване переміщення залом суду або вигуки без дозволу судді.",
+"en": "Obstructing court proceedings — attempts to disrupt the hearing, noise, unauthorized movement around the courtroom or shouting without the judge's permission."
+},
+"p": {
+"ru": "Штраф 4000€",
+"uk": "Штраф 4000€",
+"en": "4000€ fine"
+}
+},
+{
+"sub": "§9.14",
+"type": "fine",
+"t": {
+"ru": "Некомпетентность должностного лица — грубое незнание законов, регламентов или халатное исполнение своих обязанностей сотрудником гос. структур, повлекшее нарушение прав граждан.",
+"uk": "Некомпетентність посадової особи — грубе незнання законів, регламентів або недбале виконання своїх обов'язків співробітником держструктур, що спричинило порушення прав громадян.",
+"en": "Incompetence of an official — gross ignorance of laws or regulations, or negligent performance of duties by a government employee, resulting in violations of citizens' rights."
+},
+"p": {
+"ru": "Выговор + 5000€",
+"uk": "Догана + 5000€",
+"en": "Reprimand + 5000€"
+}
+},
+{
+"sub": "§9.15",
+"type": "severe",
+"t": {
+"ru": "Отказ от дачи показаний — уклонение или прямое чёткое требование отказаться от дачи показаний судье или следственным органам (за исключением использования права хранить молчание на этапе первичного допроса).",
+"uk": "Відмова від дачі показань — ухилення або пряма чітка вимога відмовитися від дачі показань судді чи слідчим органам (за винятком використання права мовчати на етапі первинного допиту).",
+"en": "Refusal to testify — evading, or flatly demanding to refuse, giving testimony to the judge or investigative bodies (except using the right to remain silent during the initial interrogation)."
+},
+"p": {
+"ru": "КПЗ 10 минут",
+"uk": "КПЗ 10 хвилин",
+"en": "10 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§9.16",
+"type": "severe",
+"t": {
+"ru": "Ложные показания — умышленный обман суда или следствия, дача заведомо ложной информации или подделка фактов во время процесса.",
+"uk": "Неправдиві свідчення — умисний обман суду чи слідства, надання завідомо неправдивої інформації або підробка фактів під час процесу.",
+"en": "False testimony — deliberately deceiving the court or investigation, giving knowingly false information or forging facts during the process."
+},
+"p": {
+"ru": "КПЗ 15 минут",
+"uk": "КПЗ 15 хвилин",
+"en": "15 minutes detention (KPZ)"
+}
+},
+{
+"sub": "§9.17",
+"type": "fine",
+"t": {
+"ru": "Неуважение к суду — оскорбления участников процесса, неадекватное поведение, крики или нецензурная лексика во время судебного заседания.",
+"uk": "Неповага до суду — образи учасників процесу, неадекватна поведінка, крики або нецензурна лексика під час судового засідання.",
+"en": "Contempt of court — insulting participants, inappropriate behavior, shouting or obscene language during a court session."
+},
+"p": {
+"ru": "Штраф 3000€ / +10 минут к текущему сроку КПЗ",
+"uk": "Штраф 3000€ / +10 хвилин до поточного терміну КПЗ",
+"en": "3000€ fine / +10 minutes to the current detention (KPZ) term"
+}
+},
+{
+"sub": "§9.18",
+"type": "fine",
+"t": {
+"ru": "Помеха судебному процессу — попытки сорвать заседание, шумы, передвижения по залу без разрешения или выкрики с места.",
+"uk": "Перешкоджання судовому процесу — спроби зірвати засідання, шуми, пересування залом без дозволу або вигуки з місця.",
+"en": "Obstructing court proceedings — attempts to disrupt the hearing, noise, moving around the room without permission or shouting from one's seat."
+},
+"p": {
+"ru": "Штраф 6000€",
+"uk": "Штраф 6000€",
+"en": "6000€ fine"
 }
 }
 ]
@@ -1712,73 +2047,6 @@ const rules = [
 ]
 },
 {
-"num": 13,
-"icon": "fa-fire",
-"tt": {
-"ru": "Пиротехника",
-"uk": "Піротехніка",
-"en": "Pyrotechnics"
-},
-"items": [
-{
-"sub": "§13.1",
-"type": "severe",
-"t": {
-"ru": "Использование пиротехники в людных местах.",
-"uk": "Використання піротехніки у людних місцях.",
-"en": "Using pyrotechnics in crowded places."
-},
-"p": {
-"ru": "Предупреждение → депорт 2 суток",
-"uk": "Попередження → депорт 2 доби",
-"en": "Warning → deport 2 days"
-}
-},
-{
-"sub": "§13.2",
-"type": "severe",
-"t": {
-"ru": "Нападение на гос. структуры с использованием пиротехники.",
-"uk": "Напад на гос.структури з використанням піротехніки.",
-"en": "Attacking government structures using pyrotechnics."
-},
-"p": {
-"ru": "депорт 1 сутки",
-"uk": "депорт 1 доба",
-"en": "deport 1 day"
-}
-},
-{
-"sub": "§13.3",
-"type": "severe",
-"t": {
-"ru": "Злоупотребление пиротехникой во время RP.",
-"uk": "Зловживання піротехніки під час RP.",
-"en": "Abusing pyrotechnics during RP."
-},
-"p": {
-"ru": "депорт 2 суток",
-"uk": "депорт 2 доби",
-"en": "deport 2 days"
-}
-},
-{
-"sub": "§13.4",
-"type": "severe",
-"t": {
-"ru": "Бросание пиротехники в суде или полицейском участке.",
-"uk": "Кидання піротехніки у суді або поліцейському-участку.",
-"en": "Throwing pyrotechnics in court or a police station."
-},
-"p": {
-"ru": "Предупреждение или депорт до 2 суток",
-"uk": "Попередження або депорт до 2 діб",
-"en": "Warning or deport up to 2 days"
-}
-}
-]
-},
-{
 "num": 14,
 "icon": "fa-user-shield",
 "tt": {
@@ -1791,84 +2059,112 @@ const rules = [
 "sub": "§14.1",
 "type": "severe",
 "t": {
-"ru": "Оскорбление администрации.",
-"uk": "Образа адміністрації.",
-"en": "Insulting the administration."
+"ru": "Оскорбление администрации — мат, хамство и оскорбления админа в OOC / войсе / Discord / Telegram / чатах проекта.",
+"uk": "Образа адміністрації — мат, хамство та образи адміна в OOC / войсі / Discord / Telegram / чатах проєкту.",
+"en": "Insulting the administration — swearing, rudeness and insults toward an admin in OOC / voice / Discord / Telegram / project chats."
 },
 "p": {
-"ru": "Бан 1 день",
-"uk": "Бан 1 день",
-"en": "ban 1 day"
+"ru": "3 дня",
+"uk": "3 дні",
+"en": "3 days"
 }
 },
 {
 "sub": "§14.2",
 "type": "severe",
 "t": {
-"ru": "Оскорбление родителей администрации.",
-"uk": "Образа батьків адміністрації.",
-"en": "Insulting the family/parents of an administration member."
+"ru": "Оскорбление родных администрации — любые прямые или завуалированные упоминания, оскорбления и затрагивание родителей, родственников или близких людей администратора в OOC-чате, войсе, Discord или Telegram, чатах проекта.",
+"uk": "Образа рідних адміністрації — будь-які прямі або завуальовані згадки, образи та зачіпання батьків, родичів чи близьких людей адміністратора в OOC-чаті, войсі, Discord або Telegram, чатах проєкту.",
+"en": "Insulting an admin's family — any direct or veiled mentions, insults or references to an admin's parents, relatives or loved ones in OOC chat, voice, Discord, Telegram or project chats."
 },
 "p": {
-"ru": "Бан 3 дня",
-"uk": "Бан 3 дня",
-"en": "ban 3 days"
+"ru": "10 дней",
+"uk": "10 днів",
+"en": "10 days"
 }
 },
 {
 "sub": "§14.3",
 "type": "severe",
 "t": {
-"ru": "Неуважение к администрации.",
-"uk": "Неповага до адміністрації.",
-"en": "Disrespect toward the administration."
+"ru": "Неуважение и помеха работе — перебивание, хамство, провокации.",
+"uk": "Неповага та перешкоджання роботі — перебивання, хамство, провокації.",
+"en": "Disrespect and obstructing work — interrupting, rudeness, provocations."
 },
 "p": {
-"ru": "Предупреждение",
-"uk": "Попередження",
-"en": "Warning"
+"ru": "от 1 до 3 дней",
+"uk": "від 1 до 3 днів",
+"en": "1 to 3 days"
 }
 },
 {
 "sub": "§14.4",
 "type": "severe",
 "t": {
-"ru": "Перебивание администрации.",
-"uk": "Перебивання адміністрації.",
-"en": "Interrupting the administration."
+"ru": "Неподчинение требованиям администрации — игнорирование или прямой отказ выполнять законные OOC-указания администратора (например, прекратить NonRP действия, предоставить откат, сменить NonRP скин).",
+"uk": "Непокора вимогам адміністрації — ігнорування або пряма відмова виконувати законні OOC-вказівки адміністратора (наприклад, припинити NonRP дії, надати відкат, змінити NonRP скін).",
+"en": "Disobeying the administration — ignoring or flatly refusing lawful OOC instructions from an admin (e.g. stop NonRP actions, provide a rollback/recording, change a NonRP skin)."
 },
 "p": {
-"ru": "Предупреждение",
-"uk": "Попередження",
-"en": "Warning"
+"ru": "от 2 до 4 дней",
+"uk": "від 2 до 4 днів",
+"en": "2 to 4 days"
 }
 },
 {
 "sub": "§14.5",
 "type": "severe",
 "t": {
-"ru": "Невыполнение прямого распоряжения администрации.",
-"uk": "Невиконання прямого розпорядження адміністрації.",
-"en": "Failing to comply with a direct order from the administration."
+"ru": "Угрозы в адрес администрации — угрозы расправой в реале, доксом, деаноном или вредом серверу.",
+"uk": "Погрози на адресу адміністрації — погрози розправою в реалі, доксом, деаноном або шкодою серверу.",
+"en": "Threats against the administration — threats of real-life violence, doxxing, deanonymization or harm to the server."
 },
 "p": {
-"ru": "Бан 2 дня",
-"uk": "Бан 2 дня",
-"en": "ban 2 days"
+"ru": "от 14 дней до ЧСП",
+"uk": "від 14 днів до ЧСП",
+"en": "from 14 days up to a project blacklist (ЧСП)"
 }
 },
 {
 "sub": "§14.6",
 "type": "severe",
 "t": {
-"ru": "Угрозы в адрес администрации.",
-"uk": "Погрози на адресу адміністрації.",
-"en": "Threatening the administration."
+"ru": "Обман администрации — ложь, скрытие фактов или подделка доказательств (скринов / откатов).",
+"uk": "Обман адміністрації — брехня, приховування фактів або підробка доказів (скринів / відкатів).",
+"en": "Deceiving the administration — lying, concealing facts or forging evidence (screenshots / recordings)."
 },
 "p": {
-"ru": "Бан 7 дней",
-"uk": "Бан 7 днів",
-"en": "ban 7 days"
+"ru": "10 дней",
+"uk": "10 днів",
+"en": "10 days"
+}
+},
+{
+"sub": "§14.7",
+"type": "severe",
+"t": {
+"ru": "Вмешательство в разборки — помехи третьих лиц проведению админ-разборок (стрельба, влезание в диалог).",
+"uk": "Втручання в розбірки — перешкоди третіх осіб проведенню адмін-розборок (стрільба, втручання в діалог).",
+"en": "Interfering in admin investigations — third parties obstructing an admin investigation (shooting, butting into the dialogue)."
+},
+"p": {
+"ru": "от 3 до 7 дней",
+"uk": "від 3 до 7 днів",
+"en": "3 to 7 days"
+}
+},
+{
+"sub": "§14.8",
+"type": "severe",
+"t": {
+"ru": "Выход с игры во время разбирательства с администрацией.",
+"uk": "Вихід з гри під час розгляду з адміністрацією.",
+"en": "Leaving the game during an investigation by the administration."
+},
+"p": {
+"ru": "15 дней",
+"uk": "15 днів",
+"en": "15 days"
 }
 }
 ]
@@ -1950,6 +2246,62 @@ const rules = [
 "ru": "Штраф 3500€",
 "uk": "Штраф 3500€",
 "en": "3500€ fine"
+}
+},
+{
+"sub": "15.1",
+"type": "fine",
+"t": {
+"ru": "<b>Порядок задержания.</b><br>Задержание начинается с момента надевания наручников на гражданина.<br>Сотрудник полиции обязан сразу после надевания наручников предъявить служебное удостоверение.<br>Зачтение правила Миранды (прав задержанного) должно происходить строго до посадки гражданина в служебный автомобиль. Посадка в авто без зачтения Миранды является процессуальным нарушением (выговор / штраф сотруднику, но процесс не останавливается).<br>Первичный обыск на месте задержания запрещён. Задержанный сразу транспортируется в здание суда / временную камеру.",
+"uk": "<b>Порядок затримання.</b><br>Затримання починається з моменту надягання наручників на громадянина.<br>Співробітник поліції зобов'язаний одразу після надягання наручників пред'явити службове посвідчення.<br>Зачитування правила Миранди (прав затриманого) має відбуватися строго до посадки громадянина в службовий автомобіль. Посадка в авто без зачитування Миранди є процесуальним порушенням (догана / штраф співробітнику, але процес не зупиняється).<br>Первинний обшук на місці затримання заборонений. Затриманий одразу транспортується до будівлі суду / тимчасової камери.",
+"en": "<b>Detention procedure.</b><br>Detention begins the moment handcuffs are put on the citizen.<br>Right after cuffing, the police officer must present their service ID.<br>The Miranda warning (rights of the detainee) must be read strictly before the citizen is put in the service vehicle. Putting someone in the car without the Miranda warning is a procedural violation (reprimand / fine for the officer, but the process is not stopped).<br>A primary search at the detention scene is forbidden. The detainee is transported straight to the courthouse / temporary cell."
+},
+"p": {
+"ru": "Нарушение: выговор / штраф сотруднику",
+"uk": "Порушення: догана / штраф співробітнику",
+"en": "Violation: reprimand / fine for the officer"
+}
+},
+{
+"sub": "15.2",
+"type": "fine",
+"t": {
+"ru": "<b>Оказание медицинской помощи.</b><br>Если у задержанного критический уровень здоровья (ранен, тяжело пострадал), сотрудник обязан оказать первую помощь на месте или вызвать медиков.<br>Транспортировка тяжелораненого гражданина без оказания помощи запрещена.",
+"uk": "<b>Надання медичної допомоги.</b><br>Якщо у затриманого критичний рівень здоров'я (поранений, тяжко постраждав), співробітник зобов'язаний надати першу допомогу на місці або викликати медиків.<br>Транспортування тяжкопораненого громадянина без надання допомоги заборонене.",
+"en": "<b>Providing medical aid.</b><br>If the detainee is in critical condition (wounded, badly hurt), the officer must give first aid on the spot or call medics.<br>Transporting a seriously wounded citizen without giving aid is forbidden."
+},
+"p": {
+"ru": "Оказание помощи обязательно",
+"uk": "Надання допомоги обов'язкове",
+"en": "Giving aid is mandatory"
+}
+},
+{
+"sub": "15.3",
+"type": "fine",
+"t": {
+"ru": "<b>Предоставление прав и заседание суда.</b><br>После доставки задержанного во временную камеру суда ему предоставляется право на 1 телефонный звонок продолжительностью до 3 минут.<br>На приезд адвоката выделяется ровно 5 минут с момента вызова. Если адвокат не приехал или не ответил, задержанный защищает свои права на суде самостоятельно.<br>В случае прибытия адвоката им с задержанным выделяется до 10 минут на конфиденциальную беседу перед заседанием.<br>Обыск гражданина проводится исключительно в здании суда / временной камере в присутствии судьи или адвоката.<br>При обыске изымается весь нелегал (огнестрельное, колюще-режущее оружие, взрывчатка). Ограничений по полу персонажа при обыске нет.<br>Посадка в КПЗ осуществляется строго после завершения судебного процесса / вынесения приговора либо если судья не прибыл (10 минут).",
+"uk": "<b>Надання прав і судове засідання.</b><br>Після доставки затриманого до тимчасової камери суду йому надається право на 1 телефонний дзвінок тривалістю до 3 хвилин.<br>На приїзд адвоката виділяється рівно 5 хвилин з моменту виклику. Якщо адвокат не приїхав або не відповів, затриманий захищає свої права в суді самостійно.<br>У разі прибуття адвоката їм із затриманим виділяється до 10 хвилин на конфіденційну розмову перед засіданням.<br>Обшук громадянина проводиться виключно в будівлі суду / тимчасовій камері в присутності судді або адвоката.<br>Під час обшуку вилучається весь нелегал (вогнепальна, колюче-ріжуча зброя, вибухівка). Обмежень за статтю персонажа під час обшуку немає.<br>Посадка в КПЗ здійснюється строго після завершення судового процесу / винесення вироку або якщо суддя не прибув (10 хвилин).",
+"en": "<b>Rights and court hearing.</b><br>After the detainee is brought to the court's temporary cell, they have the right to 1 phone call of up to 3 minutes.<br>Exactly 5 minutes from the call are given for the lawyer to arrive. If the lawyer doesn't come or doesn't answer, the detainee defends their rights in court alone.<br>If the lawyer arrives, they and the detainee get up to 10 minutes for a confidential talk before the hearing.<br>A citizen is searched only in the courthouse / temporary cell in the presence of a judge or lawyer.<br>All illegal items (firearms, bladed weapons, explosives) are confiscated during the search. There are no restrictions based on the character's gender.<br>Placing in KPZ happens strictly after the trial ends / the sentence is issued, or if the judge did not arrive (10 minutes)."
+},
+"p": {
+"ru": "Соблюдение процедуры",
+"uk": "Дотримання процедури",
+"en": "Procedure must be followed"
+}
+},
+{
+"sub": "15.4",
+"type": "fine",
+"t": {
+"ru": "<b>Видеофиксация (боди-камера).</b><br>Сотрудник обязан вести непрерывную видеозапись с момента начала задержания и до посадки в КПЗ.<br>Срок хранения видеофиксации составляет 72 часа.<br>Запись с дефектами (нет звука, битый файл, низкое качество) признаётся недействительной («сломанная боди-камера»).<br>При отсутствии видеозаписи сотрудник получает дисциплинарный выговор в личное дело и штраф. Нарушения сотрудников не отменяют арест задержанного, если его вина была доказана.",
+"uk": "<b>Відеофіксація (боді-камера).</b><br>Співробітник зобов'язаний вести безперервний відеозапис з моменту початку затримання і до посадки в КПЗ.<br>Термін зберігання відеофіксації становить 72 години.<br>Запис з дефектами (немає звуку, битий файл, низька якість) визнається недійсним («зламана боді-камера»).<br>За відсутності відеозапису співробітник отримує дисциплінарну догану в особову справу та штраф. Порушення співробітників не скасовують арешт затриманого, якщо його вину було доведено.",
+"en": "<b>Video recording (body cam).</b><br>The officer must keep continuous video recording from the start of the detention until placement in KPZ.<br>Video recordings are stored for 72 hours.<br>A recording with defects (no sound, corrupted file, poor quality) is invalid (\"broken body cam\").<br>If there is no recording, the officer gets a disciplinary reprimand in their file and a fine. Officers' violations do not cancel the detainee's arrest if their guilt was proven."
+},
+"p": {
+"ru": "Выговор в личное дело + штраф сотруднику",
+"uk": "Догана в особову справу + штраф співробітнику",
+"en": "Reprimand in file + fine for the officer"
 }
 }
 ]
@@ -2090,9 +2442,9 @@ const rules = [
 "sub": "17.1",
 "type": "severe",
 "t": {
-"ru": "Гражданскому не разрешается садиться [на охраняемое/служебное место].",
-"uk": "Громадянський не має права сідати.",
-"en": "A civilian is not allowed to sit [in a restricted seat/position]."
+"ru": "Гражданскому запрещено садиться [на охраняемое / служебное место].",
+"uk": "Цивільному заборонено сідати [на охоронюване / службове місце].",
+"en": "A civilian is not allowed to sit [in a guarded / official seat]."
 },
 "p": {
 "ru": "1 день",
@@ -2104,9 +2456,9 @@ const rules = [
 "sub": "17.2",
 "type": "severe",
 "t": {
-"ru": "Полиция не должна иметь никаких связей с крайм-фракцией (исключение: НЕТ).",
-"uk": "Поліція не повинна мати жодних зв'язків із краймом (виняток: НЕТУ).",
-"en": "Police must have no ties to the crime faction (exception: NONE)."
+"ru": "Сотрудникам полиции запрещается иметь какие-либо контакты, договорённости или сотрудничество с криминальными фракциями и обычными криминальными лицами. ИСКЛЮЧЕНИЕ: НЕТ.",
+"uk": "Співробітникам поліції забороняється мати будь-які контакти, домовленості чи співпрацю з кримінальними фракціями та звичайними кримінальними особами. ВИНЯТОК: НЕМАЄ.",
+"en": "Police officers must not have any contacts, arrangements or cooperation with criminal factions and ordinary criminals. EXCEPTION: NONE."
 },
 "p": {
 "ru": "1-3 дня",
@@ -2118,14 +2470,42 @@ const rules = [
 "sub": "17.3",
 "type": "severe",
 "t": {
-"ru": "Гражданское лицо не имеет права помогать правоохранительным органам.",
-"uk": "Громадянська особа не має права допомагати правоохоронним органам.",
-"en": "A civilian is not allowed to assist law enforcement."
+"ru": "Гражданским лицам запрещается оказывать содействие сотрудникам правоохранительных органов.",
+"uk": "Цивільним особам забороняється надавати сприяння співробітникам правоохоронних органів.",
+"en": "Civilians are forbidden to assist law enforcement officers."
 },
 "p": {
 "ru": "5 дней",
 "uk": "5 днів",
 "en": "5 days"
+}
+},
+{
+"sub": "17.4",
+"type": "severe",
+"t": {
+"ru": "Запрещено совместно с криминальными лицами участвовать в перестрелках, погонях и других RP-ситуациях против третьих лиц.",
+"uk": "Заборонено спільно з кримінальними особами брати участь у перестрілках, погонях та інших RP-ситуаціях проти третіх осіб.",
+"en": "Taking part together with criminals in shootouts, chases and other RP situations against third parties is forbidden."
+},
+"p": {
+"ru": "2-4 дня",
+"uk": "2-4 дні",
+"en": "2-4 days"
+}
+},
+{
+"sub": "17.5",
+"type": "severe",
+"t": {
+"ru": "Запрещается во время погони садиться в транспортное средство к человеку, который не находится в розыске.",
+"uk": "Забороняється під час погоні сідати в транспортний засіб до людини, яка не перебуває в розшуку.",
+"en": "During a chase it is forbidden to get into the vehicle of a person who is not wanted."
+},
+"p": {
+"ru": "1-3 дня",
+"uk": "1-3 дні",
+"en": "1-3 days"
 }
 }
 ]
@@ -2148,9 +2528,9 @@ const rules = [
 "en": "A kidnapping requires at least two people!"
 },
 "p": {
-"ru": "Депорт от 6 часов до 1 дня, по ситуации",
-"uk": "Депорт від 6 годин до 1 дня за ситуацією",
-"en": "Deport from 6 hours to 1 day, depending on the situation"
+"ru": "Бан от 6 часов до 1 дня, по ситуации",
+"uk": "Бан від 6 годин до 1 дня за ситуацією",
+"en": "Ban from 6 hours to 1 day, depending on the situation"
 }
 },
 {
@@ -2162,9 +2542,9 @@ const rules = [
 "en": "A negotiator was not called to the kidnapping location."
 },
 "p": {
-"ru": "Депорт от 6 часов до 2 дней",
-"uk": "Депорт від 6 годин до 2 днів",
-"en": "Deport from 6 hours to 2 days"
+"ru": "Бан от 6 часов до 2 дней",
+"uk": "Бан від 6 годин до 2 днів",
+"en": "Ban from 6 hours to 2 days"
 }
 },
 {
@@ -2176,9 +2556,9 @@ const rules = [
 "en": "Demanding anything from the kidnapped person is forbidden."
 },
 "p": {
-"ru": "Депорт от 6 часов до 1 дня",
-"uk": "Депорт від 6 годин до 1 дня",
-"en": "Deport from 6 hours to 1 day"
+"ru": "Бан от 6 часов до 1 дня",
+"uk": "Бан від 6 годин до 1 дня",
+"en": "Ban from 6 hours to 1 day"
 }
 },
 {
@@ -2190,9 +2570,9 @@ const rules = [
 "en": "Kidnapping the negotiator themselves is forbidden."
 },
 "p": {
-"ru": "Депорт от 6 часов до 3 дней",
-"uk": "Депорт від 6 годин до 3 днів",
-"en": "Deport from 6 hours to 3 days"
+"ru": "Бан от 6 часов до 3 дней",
+"uk": "Бан від 6 годин до 3 днів",
+"en": "Ban from 6 hours to 3 days"
 }
 },
 {
@@ -2204,9 +2584,9 @@ const rules = [
 "en": "Kidnapping in Green Zones is forbidden."
 },
 "p": {
-"ru": "Депорт от 6 часов до 3 дней",
-"uk": "Депорт від 6 годин до 3 днів",
-"en": "Deport from 6 hours to 3 days"
+"ru": "Бан от 6 часов до 3 дней",
+"uk": "Бан від 6 годин до 3 днів",
+"en": "Ban from 6 hours to 3 days"
 }
 },
 {
@@ -2221,6 +2601,34 @@ const rules = [
 "ru": "Соблюдение таймингов",
 "uk": "Дотримання таймінгу",
 "en": "Timing must be observed"
+}
+},
+{
+"sub": "§18.7",
+"type": "severe",
+"t": {
+"ru": "Похищение человека против его воли (посадить человека в машину против его воли считается уже похищением).",
+"uk": "Викрадення людини проти її волі (посадити людину в машину проти її волі вважається вже викраденням).",
+"en": "Kidnapping a person against their will (putting a person in a car against their will already counts as kidnapping)."
+},
+"p": {
+"ru": "КПЗ 15 минут + 6000€ (пострадавшему)",
+"uk": "КПЗ 15 хвилин + 6000€ (потерпілому)",
+"en": "15 minutes detention (KPZ) + 6000€ (to the victim)"
+}
+},
+{
+"sub": "§18.8",
+"type": "severe",
+"t": {
+"ru": "Попытка похищения человека против его воли.",
+"uk": "Спроба викрадення людини проти її волі.",
+"en": "Attempted kidnapping of a person against their will."
+},
+"p": {
+"ru": "КПЗ 10 минут + 4500€",
+"uk": "КПЗ 10 хвилин + 4500€",
+"en": "10 minutes detention (KPZ) + 4500€"
 }
 }
 ]
@@ -2313,9 +2721,51 @@ const rules = [
 "en": "Failure to pay a fine."
 },
 "p": {
-"ru": "10 минут КПЗ",
-"uk": "10 хвилин КПЗ",
-"en": "10 minutes detention (KPZ)"
+"ru": "За каждые неоплаченные 1к = 1 минута КПЗ",
+"uk": "За кожні несплачені 1к = 1 хвилина КПЗ",
+"en": "For every unpaid 1k = 1 minute of detention (KPZ)"
+}
+},
+{
+"sub": "19.8",
+"type": "severe",
+"t": {
+"ru": "Игра без войса (неподтверждённый аккаунт либо из стран с ограничением на войс).",
+"uk": "Гра без войсу (непідтверджений акаунт або з країн з обмеженням на войс).",
+"en": "Playing without voice (unverified account or from countries with voice restrictions)."
+},
+"p": {
+"ru": "Сначала кик, потом перманентный бан",
+"uk": "Спочатку кік, потім перманентний бан",
+"en": "Kick first, then a permanent ban"
+}
+},
+{
+"sub": "19.9",
+"type": "severe",
+"t": {
+"ru": "Труднодоступные места. Труднодоступными считаются крыши, не обозначенные как руфер-зоны, столбы, светофоры и т. д.",
+"uk": "Важкодоступні місця. Важкодоступними вважаються дахи, не позначені як руфер-зони, стовпи, світлофори тощо.",
+"en": "Hard-to-reach places. Roofs not marked as roofer zones, poles, traffic lights, etc. count as hard-to-reach places."
+},
+"p": {
+"ru": "Кик → бан 1 день",
+"uk": "Кік → бан 1 день",
+"en": "Kick → 1 day ban"
+}
+},
+{
+"sub": "19.10",
+"type": "severe",
+"t": {
+"ru": "Работа без фракций.",
+"uk": "Робота без фракцій.",
+"en": "Working without factions."
+},
+"p": {
+"ru": "3 дня",
+"uk": "3 дні",
+"en": "3 days"
 }
 }
 ]
@@ -2333,98 +2783,277 @@ const rules = [
 "sub": "§20.1",
 "type": "severe",
 "t": {
-"ru": "Использование отмычек для снятия наручников с другого задержанного игрока.",
-"uk": "Використання відмичок для зняття наручників з іншого затриманого гравця.",
-"en": "Using lockpicks to remove handcuffs from another detained player."
+"ru": "Снятие / попытка снятия наручников отмычками с другого игрока во время активной перестрелки или погони.",
+"uk": "Зняття / спроба зняття наручників відмичками з іншого гравця під час активної перестрілки чи погоні.",
+"en": "Removing / attempting to remove handcuffs with lockpicks from another player during an active firefight or chase."
 },
 "p": {
-"ru": "2 дня бана",
-"uk": "2 дні бану",
-"en": "ban 2 days"
+"ru": "4 дня бана",
+"uk": "4 дні бану",
+"en": "4 days ban"
 }
 },
 {
 "sub": "§20.2",
 "type": "severe",
 "t": {
-"ru": "Снятие наручников отмычками с другого игрока во время активной перестрелки или погони.",
-"uk": "Зняття наручників відмичками з іншого гравця під час активної перестрілки чи погоні.",
-"en": "Removing handcuffs with lockpicks from another player during an active firefight or chase."
+"ru": "Снятие / попытка снятия наручников отмычкой с задержанного прямо в здании ПД, зале суда или КПЗ.",
+"uk": "Зняття / спроба зняття наручників відмичкою із затриманого прямо в будівлі ПД, залі суду чи КПЗ.",
+"en": "Removing / attempting to remove handcuffs with a lockpick from a detainee inside the PD building, courtroom or KPZ."
 },
 "p": {
-"ru": "4 дня бана",
-"uk": "4 дні бану",
-"en": "ban 4 days"
+"ru": "7 дней бана",
+"uk": "7 днів бану",
+"en": "7 days ban"
 }
 },
 {
 "sub": "§20.3",
 "type": "severe",
 "t": {
-"ru": "Снятие наручников отмычкой с задержанного прямо в здании ПД, зале суда или КПЗ.",
-"uk": "Зняття наручників відмичкою із затриманого прямо в будівлі ПД, залі суду чи КПЗ.",
-"en": "Removing handcuffs with a lockpick from a detainee directly inside the PD building, courtroom, or detention (KPZ)."
+"ru": "Снятие / попытка снятия наручников с игрока отмычкой, находящегося внутри служебного автомобиля полиции.",
+"uk": "Зняття / спроба зняття наручників з гравця відмичкою, що перебуває всередині службового автомобіля поліції.",
+"en": "Removing / attempting to remove handcuffs with a lockpick from a player inside a police service vehicle."
 },
 "p": {
-"ru": "7 дней бана",
-"uk": "7 днів бану",
-"en": "ban 7 days"
+"ru": "2 дня бана",
+"uk": "2 дні бану",
+"en": "2 days ban"
 }
 },
 {
 "sub": "§20.4",
 "type": "severe",
 "t": {
-"ru": "Попытка снятия наручников с игрока отмычкой, находящегося внутри служебного автомобиля полиции.",
-"uk": "Спроба зняття наручників з гравця відмичкою, який перебуває всередині службового автомобіля поліції.",
-"en": "Attempting to remove handcuffs with a lockpick from a player inside a police service vehicle."
+"ru": "Снятие / попытка снятия наручников отмычкой с игрока во время проведения процессуальных действий (обыск, допрос).",
+"uk": "Зняття / спроба зняття наручників відмичкою з гравця під час проведення процесуальних дій (обшук, допит).",
+"en": "Removing / attempting to remove handcuffs with a lockpick from a player during procedural actions (search, interrogation)."
 },
 "p": {
-"ru": "2 дня бана",
-"uk": "2 дні бану",
-"en": "ban 2 days"
+"ru": "3 дня бана",
+"uk": "3 дні бану",
+"en": "3 days ban"
 }
 },
 {
 "sub": "§20.5",
 "type": "severe",
 "t": {
-"ru": "Снятие наручников отмычкой с игрока во время проведения процессуальных действий (обыск, допрос).",
-"uk": "Зняття наручників відмичкою з гравця під час проведення процесуальних дій (обшук, допит).",
-"en": "Removing handcuffs with a lockpick from a player during procedural actions (search, interrogation)."
+"ru": "Снятие / попытка снятия наручников отмычкой без отыгровки или процесса взлома.",
+"uk": "Зняття / спроба зняття наручників відмичкою без відіграшу чи процесу зламу.",
+"en": "Removing / attempting to remove handcuffs with a lockpick without roleplay or a lockpicking process."
 },
 "p": {
-"ru": "3 дня бана",
-"uk": "3 дні бану",
-"en": "ban 3 days"
+"ru": "5 дней бана",
+"uk": "5 днів бану",
+"en": "5 days ban"
 }
 },
 {
 "sub": "§20.6",
 "type": "severe",
 "t": {
-"ru": "Снятие наручников отмычкой без отыгровки передачи предмета или процесса взлома.",
-"uk": "Зняття наручників відмичкою без відігравання передачі предмета чи процесу зламування.",
-"en": "Removing handcuffs with a lockpick without roleplaying the item handoff or the picking process."
-},
-"p": {
-"ru": "5 дней бана",
-"uk": "5 днів бану",
-"en": "ban 5 days"
-}
-},
-{
-"sub": "§20.7",
-"type": "severe",
-"t": {
-"ru": "Снятие наручников с игрока на территории Зеленой Зоны (ЗЗ).",
-"uk": "Зняття наручників з гравця на території Зеленої Зони (ЗЗ).",
-"en": "Removing handcuffs from a player within the Green Zone (GZ)."
+"ru": "Снятие / попытка снятия наручников с игрока на территории Зелёной Зоны (ЗЗ).",
+"uk": "Зняття / спроба зняття наручників з гравця на території Зеленої Зони (ЗЗ).",
+"en": "Removing / attempting to remove handcuffs from a player inside a Green Zone (GZ)."
 },
 "p": {
 "ru": "7 дней бана",
 "uk": "7 днів бану",
-"en": "ban 7 days"
+"en": "7 days ban"
+}
+},
+{
+"sub": "§20.8",
+"type": "severe",
+"t": {
+"ru": "Снятие наручников через текстуры / объекты — снятие наручников через стены, двери или любые другие текстуры и объекты.",
+"uk": "Зняття наручників через текстури / об'єкти — зняття наручників крізь стіни, двері або будь-які інші текстури та об'єкти.",
+"en": "Removing handcuffs through textures / objects — removing handcuffs through walls, doors or any other textures and objects."
+},
+"p": {
+"ru": "4 дня бана",
+"uk": "4 дні бану",
+"en": "4 days ban"
+}
+},
+{
+"sub": "§20.9",
+"type": "severe",
+"t": {
+"ru": "Снятие наручников в тяжело раненом состоянии — снятие наручников с игрока, находящегося в стадии нока (тяжёлого ранения).",
+"uk": "Зняття наручників у тяжкопораненому стані — зняття наручників з гравця, що перебуває в стадії нока (тяжкого поранення).",
+"en": "Removing handcuffs while severely wounded — removing handcuffs from a player who is knocked down (severely wounded)."
+},
+"p": {
+"ru": "3 дня бана",
+"uk": "3 дні бану",
+"en": "3 days ban"
+}
+},
+{
+"sub": "§20.10",
+"type": "severe",
+"t": {
+"ru": "Взлом наручников в воде — взлом или снятие наручников во время плавания или нахождения в воде.",
+"uk": "Злам наручників у воді — злам або зняття наручників під час плавання чи перебування у воді.",
+"en": "Breaking handcuffs in water — picking or removing handcuffs while swimming or being in water."
+},
+"p": {
+"ru": "3 дня бана",
+"uk": "3 дні бану",
+"en": "3 days ban"
+}
+}
+]
+},
+{
+"num": 21,
+"icon": "fa-hand-holding-heart",
+"tt": {
+"ru": "Права человека",
+"uk": "Права людини",
+"en": "Human rights"
+},
+"items": [
+{
+"sub": "§21.1",
+"type": "fine",
+"t": {
+"ru": "Право на жизнь, свободу и перемещение — каждый имеет право на жизнь, личную неприкосновенность и свободное перемещение по городу.",
+"uk": "Право на життя, свободу та переміщення — кожен має право на життя, особисту недоторканність і вільне переміщення містом.",
+"en": "Right to life, liberty and movement — everyone has the right to life, personal integrity and free movement around the city."
+},
+"p": {
+"ru": "За нарушение: штраф 5000€",
+"uk": "За порушення: штраф 5000€",
+"en": "For a violation: 5000€ fine"
+}
+},
+{
+"sub": "§21.2",
+"type": "fine",
+"t": {
+"ru": "Право на защиту и правовую помощь — каждый задержанный имеет право на 1 телефонный звонок (или уведомление родных), право хранить молчание, а также право на адвоката до начала допроса или оформления.",
+"uk": "Право на захист і правову допомогу — кожен затриманий має право на 1 телефонний дзвінок (або повідомлення рідних), право мовчати, а також право на адвоката до початку допиту чи оформлення.",
+"en": "Right to defense and legal aid — every detainee has the right to 1 phone call (or notification of relatives), the right to remain silent and the right to a lawyer before interrogation or processing begins."
+},
+"p": {
+"ru": "Со стороны гос. служащих: выговор в личное дело + штраф 8000€",
+"uk": "З боку держслужбовців: догана в особову справу + штраф 8000€",
+"en": "By government employees: reprimand in file + 8000€ fine"
+}
+},
+{
+"sub": "§21.3",
+"type": "fine",
+"t": {
+"ru": "Право на уважение, личную жизнь и имущество — запрещены несанкционированные обыски, проникновение в частную собственность или вмешательство в личную жизнь без законных оснований / ордера.",
+"uk": "Право на повагу, особисте життя та майно — заборонені несанкціоновані обшуки, проникнення в приватну власність або втручання в особисте життя без законних підстав / ордера.",
+"en": "Right to respect, privacy and property — unauthorized searches, entering private property or interfering in private life without legal grounds / a warrant are forbidden."
+},
+"p": {
+"ru": "Со стороны гос. служащих: выговор в личное дело + 4500€",
+"uk": "З боку держслужбовців: догана в особову справу + 4500€",
+"en": "By government employees: reprimand in file + 4500€"
+}
+},
+{
+"sub": "§21.4",
+"type": "fine",
+"t": {
+"ru": "Свобода слова и личного мнения — граждане имеют право свободно выражать своё мнение и использовать интернет без цензуры, если это не нарушает другие статьи.",
+"uk": "Свобода слова та особистої думки — громадяни мають право вільно висловлювати свою думку та користуватися інтернетом без цензури, якщо це не порушує інші статті.",
+"en": "Freedom of speech and opinion — citizens have the right to freely express their opinion and use the internet without censorship, as long as it doesn't violate other articles."
+},
+"p": {
+"ru": "За ограничение: штраф 3000€",
+"uk": "За обмеження: штраф 3000€",
+"en": "For restricting it: 3000€ fine"
+}
+},
+{
+"sub": "§21.5",
+"type": "fine",
+"t": {
+"ru": "Право на брак и участие в выборах — каждый имеет право на добровольное вступление в брак, а также на участие в государственных референдумах и опросах.",
+"uk": "Право на шлюб і участь у виборах — кожен має право на добровільне вступ до шлюбу, а також на участь у державних референдумах і опитуваннях.",
+"en": "Right to marry and to vote — everyone has the right to voluntarily marry and to take part in state referendums and polls."
+},
+"p": {
+"ru": "За препятствование: штраф 4500€",
+"uk": "За перешкоджання: штраф 4500€",
+"en": "For obstructing it: 4500€ fine"
+}
+},
+{
+"sub": "§21.6",
+"type": "fine",
+"t": {
+"ru": "Презумпция невиновности — человек считается невиновным, пока его вина не доказана сотрудниками полиции / судом. Все сомнения трактуются в пользу гражданина.",
+"uk": "Презумпція невинуватості — людина вважається невинуватою, доки її вину не доведено співробітниками поліції / судом. Усі сумніви трактуються на користь громадянина.",
+"en": "Presumption of innocence — a person is considered innocent until guilt is proven by the police / the court. All doubts are interpreted in the citizen's favor."
+},
+"p": {
+"ru": "Со стороны гос. служащих: выговор в личное дело + 6500€",
+"uk": "З боку держслужбовців: догана в особову справу + 6500€",
+"en": "By government employees: reprimand in file + 6500€"
+}
+},
+{
+"sub": "§21.7",
+"type": "fine",
+"t": {
+"ru": "Право на медицинскую помощь — каждый человек (включая задержанных и преступников) имеет право на получение первой медицинской помощи при ранении или ухудшении самочувствия.",
+"uk": "Право на медичну допомогу — кожна людина (включно із затриманими та злочинцями) має право на отримання першої медичної допомоги при пораненні або погіршенні самопочуття.",
+"en": "Right to medical aid — every person (including detainees and criminals) has the right to first medical aid when wounded or feeling worse."
+},
+"p": {
+"ru": "За отказ: штраф 4000€",
+"uk": "За відмову: штраф 4000€",
+"en": "For refusal: 4000€ fine"
+}
+},
+{
+"sub": "§21.8",
+"type": "fine",
+"t": {
+"ru": "Право на честный и открытый суд — каждый гражданин имеет право обжаловать действия полиции и требовать открытого судебного разбирательства с предоставлением доказательств его вины (видеофиксации).",
+"uk": "Право на чесний і відкритий суд — кожен громадянин має право оскаржувати дії поліції та вимагати відкритого судового розгляду з наданням доказів його вини (відеофіксації).",
+"en": "Right to a fair and open trial — every citizen has the right to appeal police actions and demand an open trial with evidence of their guilt (video recording) presented."
+},
+"p": {
+"ru": "—",
+"uk": "—",
+"en": "—"
+}
+},
+{
+"sub": "§21.9",
+"type": "fine",
+"t": {
+"ru": "Запрет на пытки и жестокое обращение — запрещено применять физическое насилие, пытки, а также унизительные действия по отношению к задержанным или гражданским.",
+"uk": "Заборона катувань і жорстокого поводження — заборонено застосовувати фізичне насильство, катування, а також принизливі дії щодо затриманих чи цивільних.",
+"en": "Ban on torture and cruel treatment — physical violence, torture and humiliating acts toward detainees or civilians are forbidden."
+},
+"p": {
+"ru": "Со стороны гос. служащих: выговор в личное дело + 8000€",
+"uk": "З боку держслужбовців: догана в особову справу + 8000€",
+"en": "By government employees: reprimand in file + 8000€"
+}
+},
+{
+"sub": "§21.10",
+"type": "fine",
+"t": {
+"ru": "Право на труд и предпринимательство — каждый гражданин имеет право свободно выбирать профессию и устраиваться на любую доступную работу без незаконных помех от третьих лиц или власти (при условии, что нет ЧСФ).",
+"uk": "Право на працю та підприємництво — кожен громадянин має право вільно обирати професію та влаштовуватися на будь-яку доступну роботу без незаконних перешкод від третіх осіб чи влади (за умови, що немає ЧСФ).",
+"en": "Right to work and entrepreneurship — every citizen has the right to freely choose a profession and take any available job without unlawful interference from third parties or authorities (provided there is no ЧСФ)."
+},
+"p": {
+"ru": "За препятствование: штраф 6000€",
+"uk": "За перешкоджання: штраф 6000€",
+"en": "For obstructing it: 6000€ fine"
 }
 }
 ]
